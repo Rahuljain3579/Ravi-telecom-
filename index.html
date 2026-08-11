@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ravi Telecom | Mobile Shop & Repair</title>
+<title>Ravi Telecom | Mobile Shop & AI Repair Assistant</title>
 
-<meta name="description" content="Ravi Telecom - Mobile Phones, Accessories, Mobile Repairing, Recharge and SIM Services.">
+<meta name="description" content="Ravi Telecom - Mobile Phones, Accessories, Mobile Repairing, Recharge, SIM Services and AI Mobile Repair Assistant.">
 
 <style>
 *{
@@ -225,6 +226,89 @@ section{
   font-weight:800;
 }
 
+/* AI ASSISTANT */
+.ai-section{
+  background:linear-gradient(135deg,#101c36,#0759b8);
+  color:white;
+  max-width:none;
+}
+
+.ai-box{
+  max-width:850px;
+  margin:auto;
+  background:white;
+  color:#182230;
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 10px 35px #0004;
+}
+
+.ai-title{
+  text-align:center;
+  color:#0759b8;
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.ai-subtitle{
+  text-align:center;
+  color:#667085;
+  margin-bottom:20px;
+}
+
+.ai-input{
+  width:100%;
+  min-height:110px;
+  padding:15px;
+  border:2px solid #dce4ef;
+  border-radius:15px;
+  font-size:16px;
+  resize:vertical;
+  outline:none;
+}
+
+.ai-input:focus{
+  border-color:#0759b8;
+}
+
+.ai-btn{
+  width:100%;
+  border:0;
+  margin-top:12px;
+  padding:14px;
+  border-radius:14px;
+  background:#0759b8;
+  color:white;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.ai-btn:hover{
+  background:#064a9e;
+}
+
+.ai-answer{
+  display:none;
+  margin-top:18px;
+  background:#eef5ff;
+  border-left:5px solid #0759b8;
+  border-radius:12px;
+  padding:18px;
+  white-space:pre-line;
+}
+
+.ai-wa{
+  display:none;
+  margin-top:12px;
+  text-align:center;
+  background:#20d568;
+  color:white;
+  padding:12px;
+  border-radius:12px;
+  font-weight:800;
+}
+
 /* SERVICES */
 .services{
   background:white;
@@ -257,7 +341,25 @@ footer{
   padding:25px 15px;
 }
 
-/* FLOATING WHATSAPP */
+/* FLOATING BUTTONS */
+.float-ai{
+  position:fixed;
+  right:18px;
+  bottom:92px;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#0759b8;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:29px;
+  box-shadow:0 5px 20px #0004;
+  z-index:999;
+  border:3px solid white;
+}
+
 .float-wa{
   position:fixed;
   right:18px;
@@ -302,8 +404,13 @@ footer{
   .title{
     font-size:30px;
   }
+
+  .ai-box{
+    padding:18px;
+  }
 }
 </style>
+
 </head>
 
 <body>
@@ -318,6 +425,7 @@ footer{
 <nav>
 <a href="#home">Home</a>
 <a href="#mobiles">Mobiles</a>
+<a href="#ai">🤖 AI Repair</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -328,6 +436,7 @@ footer{
 <main>
 
 <!-- HOME -->
+
 <section class="hero" id="home">
 
 <h1>
@@ -344,24 +453,20 @@ Mobile Phones • Accessories • Repairing • Recharge • SIM Services
 🛍️ Mobile Shop
 </a>
 
-<!-- WHATSAPP: 9755557593 -->
 <a class="btn btn-wa"
-href="https://wa.me/919755557593?text=Namaste%20Ravi%20Telecom%2C%20mujhe%20mobile%20ya%20accessories%20ke%20baare%20mein%20jaankari%20chahiye."
+href="https://wa.me/919755557593?text=Namaste%20Ravi%20Telecom%2C%20mujhe%20mobile%20ya%20accessories%20ke%20baare%20mein%20jaankari%20chahiye"
 target="_blank">
-💬 WhatsApp
-</a>
+💬 WhatsApp </a>
 
-<!-- CALL: 9926213579 -->
 <a class="btn btn-call"
 href="tel:+919926213579">
-📞 Call Now
-</a>
+📞 Call Now </a>
 
 </div>
 </section>
 
-
 <!-- CATEGORIES -->
+
 <section>
 
 <h2 class="title">Our Categories</h2>
@@ -411,8 +516,8 @@ Ravi Telecom पर आपकी जरूरत का सामान
 </div>
 </section>
 
-
 <!-- MOBILES -->
+
 <section id="mobiles">
 
 <h2 class="title">Popular Mobiles</h2>
@@ -424,66 +529,81 @@ Mobile की कीमत और availability के लिए WhatsApp कर�
 <div class="products">
 
 <div class="product">
-
 <div class="pic">📱</div>
-
 <h3>Vivo Smartphones</h3>
-
 <p>Latest Vivo models available</p>
-
 <div class="price">Price: पूछें</div>
 
 <a class="order"
-href="https://wa.me/919755557593?text=Vivo%20mobile%20ke%20latest%20models%20aur%20price%20bataye."
+href="https://wa.me/919755557593?text=Vivo%20mobile%20ke%20latest%20models%20aur%20price%20bataye"
 target="_blank">
-WhatsApp पर पूछें
-</a>
+WhatsApp पर पूछें </a>
 
 </div>
 
-
 <div class="product">
-
 <div class="pic">📱</div>
-
 <h3>OPPO Smartphones</h3>
-
 <p>Latest OPPO models available</p>
-
 <div class="price">Price: पूछें</div>
 
 <a class="order"
-href="https://wa.me/919755557593?text=OPPO%20mobile%20ke%20latest%20models%20aur%20price%20bataye."
+href="https://wa.me/919755557593?text=OPPO%20mobile%20ke%20latest%20models%20aur%20price%20bataye"
 target="_blank">
-WhatsApp पर पूछें
-</a>
+WhatsApp पर पूछें </a>
 
 </div>
 
-
 <div class="product">
-
 <div class="pic">📱</div>
-
 <h3>Samsung Smartphones</h3>
-
 <p>Latest Samsung models available</p>
-
 <div class="price">Price: पूछें</div>
 
 <a class="order"
-href="https://wa.me/919755557593?text=Samsung%20mobile%20ke%20latest%20models%20aur%20price%20bataye."
+href="https://wa.me/919755557593?text=Samsung%20mobile%20ke%20latest%20models%20aur%20price%20bataye"
 target="_blank">
-WhatsApp पर पूछें
-</a>
+WhatsApp पर पूछें </a>
 
 </div>
 
 </div>
 </section>
 
+<!-- AI REPAIR ASSISTANT -->
+
+<section class="ai-section" id="ai">
+
+<div class="ai-box">
+
+<h2 class="ai-title">🤖 AI Mobile Repair Assistant</h2>
+
+<p class="ai-subtitle">
+अपने मोबाइल की समस्या नीचे लिखें — AI आपको शुरुआती जानकारी देगा।
+</p>
+
+<textarea
+id="aiInput"
+class="ai-input"
+placeholder="उदाहरण: Vivo Y12 चालू नहीं हो रहा है&#10;या&#10;Samsung में charging नहीं हो रही है"></textarea>
+
+<button class="ai-btn" onclick="askAI()">
+🤖 AI से समस्या पूछें
+</button>
+
+<div id="aiAnswer" class="ai-answer"></div>
+
+<a
+id="aiWhatsApp"
+class="ai-wa"
+target="_blank">
+💬 Ravi Telecom से WhatsApp पर संपर्क करें </a>
+
+</div>
+</section>
 
 <!-- SERVICES -->
+
 <section class="services" id="services">
 
 <h2 class="title">Our Services</h2>
@@ -515,8 +635,8 @@ Mobile से जुड़ी कई सुविधाएं एक ही ज�
 </div>
 </section>
 
-
 <!-- CONTACT -->
+
 <section id="contact">
 
 <div class="contact">
@@ -533,18 +653,14 @@ Mobile Shop • Repairing • Accessories • Recharge • SIM Services
 
 <div class="buttons">
 
-<!-- WHATSAPP -->
 <a class="btn btn-wa"
 href="https://wa.me/919755557593"
 target="_blank">
-💬 WhatsApp
-</a>
+💬 WhatsApp </a>
 
-<!-- CALL -->
 <a class="btn btn-call"
 href="tel:+919926213579">
-📞 9926213579
-</a>
+📞 9926213579 </a>
 
 </div>
 
@@ -552,7 +668,6 @@ href="tel:+919926213579">
 </section>
 
 </main>
-
 
 <footer>
 
@@ -562,14 +677,154 @@ href="tel:+919926213579">
 
 </footer>
 
+<!-- FLOATING AI -->
+
+<a class="float-ai"
+href="#ai"
+aria-label="AI Repair Assistant">
+🤖 </a>
 
 <!-- FLOATING WHATSAPP -->
+
 <a class="float-wa"
 href="https://wa.me/919755557593"
 target="_blank"
 aria-label="WhatsApp">
-💬
-</a>
+💬 </a>
+
+<script>
+
+function askAI(){
+
+  const input = document.getElementById("aiInput");
+  const answer = document.getElementById("aiAnswer");
+  const whatsapp = document.getElementById("aiWhatsApp");
+
+  const problem = input.value.trim().toLowerCase();
+
+  if(!problem){
+    answer.style.display = "block";
+    answer.innerText = "⚠️ पहले अपने मोबाइल की समस्या लिखें।";
+    whatsapp.style.display = "none";
+    return;
+  }
+
+  let response =
+  "🔍 आपकी समस्या के लिए शुरुआती जाँच:\n\n" +
+  "1. मोबाइल को चार्जर लगाकर 15–20 मिनट रखें।\n" +
+  "2. Power button को 10–15 सेकंड दबाकर देखें।\n" +
+  "3. अगर समस्या बनी रहे तो मोबाइल को बार-बार खोलने की कोशिश न करें।\n\n" +
+  "🔧 सही diagnosis के लिए Ravi Telecom पर technician से जाँच करवाना बेहतर रहेगा।";
+
+  if(
+    problem.includes("dead") ||
+    problem.includes("चालू") ||
+    problem.includes("on nahi") ||
+    problem.includes("power")
+  ){
+    response =
+    "🔧 Phone Dead / Power Problem\n\n" +
+    "• Charger और cable बदलकर देखें।\n" +
+    "• Charging port में dust तो नहीं देखें।\n" +
+    "• Power button 10–15 सेकंड दबाएँ।\n" +
+    "• फिर भी phone चालू नहीं हो तो battery, charging section या motherboard की जाँच जरूरी हो सकती है।\n\n" +
+    "⚠️ Motherboard repair के लिए technician से diagnosis करवाएँ।";
+  }
+
+  else if(
+    problem.includes("charging") ||
+    problem.includes("charge") ||
+    problem.includes("चार्ज")
+  ){
+    response =
+    "🔋 Charging Problem\n\n" +
+    "• दूसरा charger और cable लगाकर देखें।\n" +
+    "• Charging port में dust/loose connection देखें।\n" +
+    "• Phone गर्म हो रहा हो तो charging रोक दें।\n" +
+    "• समस्या जारी रहे तो charging port, charging IC या battery की जाँच हो सकती है।";
+  }
+
+  else if(
+    problem.includes("battery") ||
+    problem.includes("बैटरी")
+  ){
+    response =
+    "🔋 Battery Problem\n\n" +
+    "• Battery बहुत जल्दी खत्म हो रही है तो background apps check करें।\n" +
+    "• Phone अचानक बंद होता है तो battery health check करवाएँ।\n" +
+    "• Battery फूल गई हो तो phone इस्तेमाल न करें और तुरंत technician को दिखाएँ।";
+  }
+
+  else if(
+    problem.includes("display") ||
+    problem.includes("screen") ||
+    problem.includes("lcd") ||
+    problem.includes("डिस्प्ले")
+  ){
+    response =
+    "📱 Display Problem\n\n" +
+    "• Phone गिरने के बाद display नहीं आ रहा है तो display/flex की जाँच जरूरी है।\n" +
+    "• अगर phone में vibration या sound आ रही है लेकिन screen black है, तो display section check करवाएँ।\n" +
+    "• पानी लगा हो तो phone charge न करें।";
+  }
+
+  else if(
+    problem.includes("network") ||
+    problem.includes("signal") ||
+    problem.includes("नेटवर्क")
+  ){
+    response =
+    "📶 Network Problem\n\n" +
+    "• Airplane mode ON/OFF करें।\n" +
+    "• SIM निकालकर दोबारा लगाएँ।\n" +
+    "• Network settings reset करके देखें।\n" +
+    "• दूसरी SIM से test करें।\n" +
+    "• फिर भी समस्या हो तो antenna/network section की जाँच करवाएँ।";
+  }
+
+  else if(
+    problem.includes("water") ||
+    problem.includes("pani") ||
+    problem.includes("पानी")
+  ){
+    response =
+    "💧 Water Damage\n\n" +
+    "⚠️ Phone को तुरंत बंद करें।\n" +
+    "⚠️ Charger बिल्कुल न लगाएँ।\n" +
+    "⚠️ Hair dryer या तेज गर्मी का इस्तेमाल न करें।\n\n" +
+    "जल्दी से technician को दिखाएँ ताकि motherboard की proper cleaning और inspection हो सके।";
+  }
+
+  else if(
+    problem.includes("hang") ||
+    problem.includes("slow") ||
+    problem.includes("हैंग") ||
+    problem.includes("slow")
+  ){
+    response =
+    "⚡ Phone Hang / Slow Problem\n\n" +
+    "• Storage में कुछ space खाली करें।\n" +
+    "• Unused apps हटाएँ।\n" +
+    "• Phone restart करें।\n" +
+    "• Software update check करें।\n" +
+    "• फिर भी समस्या हो तो software diagnosis करवाएँ।";
+  }
+
+  answer.style.display = "block";
+  answer.innerText = response;
+
+  const message =
+    "Namaste Ravi Telecom, mere mobile mein ye problem hai: " +
+    input.value;
+
+  whatsapp.href =
+    "https://wa.me/919755557593?text=" +
+    encodeURIComponent(message);
+
+  whatsapp.style.display = "block";
+}
+
+</script>
 
 </body>
 </html>
