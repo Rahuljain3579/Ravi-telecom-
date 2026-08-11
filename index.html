@@ -6,14 +6,13 @@
 
 <title>Ravi Telecom | Mobile Shop & Repair</title>
 
-<meta name="description" content="Ravi Telecom - Mobile Phones, Accessories, Recharge and Mobile Repairing in Umari, Bhind, Madhya Pradesh.">
+<meta name="description" content="Ravi Telecom - Mobile Phones, Accessories, Mobile Repairing, Recharge and SIM Services.">
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
 }
 
 html{
@@ -21,338 +20,287 @@ html{
 }
 
 body{
+  font-family:Arial,Helvetica,sans-serif;
   background:#f5f7fb;
-  color:#222;
+  color:#182230;
   line-height:1.6;
 }
 
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
 header{
-  background:linear-gradient(135deg,#0d47a1,#1976d2);
-  color:white;
-  padding:15px 5%;
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 3px 12px rgba(0,0,0,.15);
+  background:#0759b8;
+  color:white;
+  box-shadow:0 3px 14px #0002;
 }
 
 .nav{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  padding:14px 18px;
 }
 
 .logo{
-  font-size:25px;
-  font-weight:bold;
+  font-size:27px;
+  font-weight:800;
+  color:#ffe600;
 }
 
 .logo span{
-  color:#ffeb3b;
+  color:white;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:15px;
+nav{
+  display:flex;
+  gap:22px;
   font-weight:bold;
-  font-size:14px;
 }
 
 nav a:hover{
-  color:#ffeb3b;
+  color:#ffe600;
 }
 
+/* HERO */
 .hero{
-  background:linear-gradient(135deg,#0d47a1,#42a5f5);
+  background:linear-gradient(135deg,#064a9e,#2e9bea);
   color:white;
-  padding:75px 5%;
   text-align:center;
+  padding:72px 18px 78px;
 }
 
 .hero h1{
-  font-size:42px;
+  font-size:clamp(36px,8vw,60px);
   margin-bottom:12px;
 }
 
-.hero h1 span{
-  color:#ffeb3b;
+.yellow{
+  color:#ffe600;
 }
 
 .hero p{
-  font-size:19px;
-  margin-bottom:25px;
+  font-size:20px;
+  max-width:720px;
+  margin:0 auto 28px;
 }
 
 .buttons{
   display:flex;
   justify-content:center;
-  gap:12px;
+  gap:14px;
   flex-wrap:wrap;
 }
 
 .btn{
   display:inline-block;
-  padding:13px 23px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
+  padding:14px 25px;
+  border-radius:35px;
+  font-size:18px;
+  font-weight:800;
+  box-shadow:0 5px 15px #0002;
 }
 
-.btn-yellow{
-  background:#ffeb3b;
+.btn-shop{
+  background:#ffe600;
   color:#111;
 }
 
-.btn-green{
-  background:#25d366;
+.btn-wa{
+  background:#20d568;
   color:white;
 }
 
-.btn-white{
+.btn-call{
   background:white;
-  color:#0d47a1;
+  color:#0759b8;
 }
 
+/* SECTIONS */
 section{
-  padding:55px 5%;
-}
-
-.container{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
+  padding:58px 18px;
 }
 
-.section-title{
+.title{
   text-align:center;
-  margin-bottom:35px;
-}
-
-.section-title h2{
-  font-size:31px;
-  color:#0d47a1;
+  color:#0759b8;
+  font-size:34px;
   margin-bottom:8px;
 }
 
-.section-title p{
-  color:#666;
+.subtitle{
+  text-align:center;
+  color:#667085;
+  margin-bottom:30px;
+  font-size:18px;
 }
 
-.categories,
-.products,
-.services,
-.why-grid{
+/* CATEGORY */
+.grid{
   display:grid;
-  gap:20px;
-}
-
-.categories{
-  grid-template-columns:repeat(4,1fr);
-}
-
-.products{
-  grid-template-columns:repeat(4,1fr);
-}
-
-.services{
   grid-template-columns:repeat(3,1fr);
-}
-
-.why-grid{
-  grid-template-columns:repeat(4,1fr);
+  gap:20px;
 }
 
 .card{
   background:white;
-  padding:25px 18px;
+  border-radius:20px;
+  padding:28px 20px;
   text-align:center;
-  border-radius:15px;
-  box-shadow:0 4px 15px rgba(0,0,0,.08);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
+  box-shadow:0 5px 22px #102a430d;
+  border:1px solid #e7ebf2;
 }
 
 .icon{
-  font-size:50px;
-  margin-bottom:10px;
+  font-size:52px;
+  margin-bottom:12px;
 }
 
 .card h3{
-  color:#0d47a1;
-  margin-bottom:8px;
+  color:#0759b8;
+  font-size:22px;
+  margin-bottom:7px;
+}
+
+.card p{
+  color:#667085;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .product{
   background:white;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 5px 22px #102a430d;
+}
+
+.product .pic{
+  height:150px;
   border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 4px 15px rgba(0,0,0,.08);
-  text-align:center;
-}
-
-.product-top{
-  background:#eaf2ff;
-  padding:25px;
-  font-size:65px;
-}
-
-.product-info{
-  padding:18px;
-}
-
-.product-info h3{
-  margin-bottom:5px;
-}
-
-.product-info p{
-  color:#666;
-  font-size:14px;
-  margin-bottom:14px;
-}
-
-.whatsapp-btn{
-  display:inline-block;
-  background:#25d366;
-  color:white;
-  padding:9px 15px;
-  border-radius:22px;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:14px;
-}
-
-.services-section{
-  background:white;
-}
-
-.service{
-  background:#f5f7fb;
-  padding:25px;
-  border-radius:15px;
-  text-align:center;
-}
-
-.contact{
-  background:linear-gradient(135deg,#0d47a1,#1976d2);
-  color:white;
-}
-
-.contact .section-title h2{
-  color:white;
-}
-
-.contact .section-title p{
-  color:#e3f2fd;
-}
-
-.contact-box{
-  max-width:800px;
-  margin:auto;
-  background:white;
-  color:#222;
-  padding:30px;
-  border-radius:18px;
-  text-align:center;
-}
-
-.contact-item{
-  margin:12px 0;
-  font-size:17px;
-}
-
-.contact-item strong{
-  color:#0d47a1;
-}
-
-footer{
-  background:#111827;
-  color:white;
-  text-align:center;
-  padding:25px;
-}
-
-footer p{
-  color:#d1d5db;
-  margin-top:5px;
-}
-
-.floating-whatsapp{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:58px;
-  height:58px;
-  background:#25d366;
-  color:white;
-  border-radius:50%;
+  background:#eef5ff;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-decoration:none;
-  font-size:28px;
+  font-size:72px;
+}
+
+.product h3{
+  margin-top:15px;
+  color:#0759b8;
+}
+
+.product p{
+  color:#667085;
+}
+
+.price{
+  font-size:20px;
+  font-weight:800;
+  margin:8px 0 14px;
+}
+
+.order{
+  display:block;
+  text-align:center;
+  background:#20d568;
+  color:white;
+  padding:11px;
+  border-radius:12px;
+  font-weight:800;
+}
+
+/* SERVICES */
+.services{
+  background:white;
+}
+
+/* CONTACT */
+.contact{
+  background:linear-gradient(135deg,#0759b8,#1976d2);
+  color:white;
+  border-radius:25px;
+  padding:42px 24px;
+  text-align:center;
+}
+
+.contact h2{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.contact p{
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+  background:#09294e;
+  color:#dce8f7;
+  text-align:center;
+  padding:25px 15px;
+}
+
+/* FLOATING WHATSAPP */
+.float-wa{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#20d568;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  box-shadow:0 5px 20px #0004;
   z-index:999;
-  box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
-@media(max-width:900px){
+/* MOBILE */
+@media(max-width:750px){
 
-  .categories,
-  .products,
-  .why-grid{
-    grid-template-columns:repeat(2,1fr);
+  nav{
+    display:none;
   }
 
-  .services{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero h1{
-    font-size:35px;
-  }
-}
-
-@media(max-width:600px){
-
-  .nav{
-    flex-direction:column;
-  }
-
-  nav a{
-    margin:0 5px;
-    font-size:12px;
-  }
-
-  .hero{
-    padding:55px 5%;
-  }
-
-  .hero h1{
-    font-size:30px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .categories,
-  .products,
-  .services,
-  .why-grid{
+  .grid,
+  .products{
     grid-template-columns:1fr;
   }
 
-  section{
-    padding:42px 4%;
+  .hero{
+    padding:55px 16px 62px;
   }
 
-  .section-title h2{
-    font-size:27px;
+  .hero p{
+    font-size:18px;
+  }
+
+  section{
+    padding:45px 15px;
+  }
+
+  .title{
+    font-size:30px;
   }
 }
 </style>
@@ -360,12 +308,11 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
 <header>
 <div class="nav">
 
 <div class="logo">
-📱 <span>Ravi Telecom</span>
+📱 Ravi <span>Telecom</span>
 </div>
 
 <nav>
@@ -378,14 +325,13 @@ footer p{
 </div>
 </header>
 
+<main>
 
 <!-- HOME -->
 <section class="hero" id="home">
 
-<div class="container">
-
 <h1>
-Welcome to <span>Ravi Telecom</span>
+Welcome to <span class="yellow">Ravi Telecom</span>
 </h1>
 
 <p>
@@ -394,21 +340,22 @@ Mobile Phones • Accessories • Repairing • Recharge • SIM Services
 
 <div class="buttons">
 
-<a class="btn btn-yellow" href="#mobiles">
+<a class="btn btn-shop" href="#mobiles">
 🛍️ Mobile Shop
 </a>
 
-<a class="btn btn-green"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20mobile%20ke%20baare%20mein%20jankari%20chahiye."
+<!-- WHATSAPP: 9755557593 -->
+<a class="btn btn-wa"
+href="https://wa.me/919755557593?text=Namaste%20Ravi%20Telecom%2C%20mujhe%20mobile%20ya%20accessories%20ke%20baare%20mein%20jaankari%20chahiye."
 target="_blank">
 💬 WhatsApp
 </a>
 
-<a class="btn btn-white" href="tel:+919755557593">
+<!-- CALL: 9926213579 -->
+<a class="btn btn-call"
+href="tel:+919926213579">
 📞 Call Now
 </a>
-
-</div>
 
 </div>
 </section>
@@ -417,14 +364,13 @@ target="_blank">
 <!-- CATEGORIES -->
 <section>
 
-<div class="container">
+<h2 class="title">Our Categories</h2>
 
-<div class="section-title">
-<h2>Our Categories</h2>
-<p>Ravi Telecom पर आपकी जरूरत का सामान</p>
-</div>
+<p class="subtitle">
+Ravi Telecom पर आपकी जरूरत का सामान
+</p>
 
-<div class="categories">
+<div class="grid">
 
 <div class="card">
 <div class="icon">📱</div>
@@ -435,384 +381,193 @@ target="_blank">
 <div class="card">
 <div class="icon">🎧</div>
 <h3>Accessories</h3>
-<p>Covers, Chargers & Earphones</p>
+<p>Cover, Charger, Cable, Earphones & More</p>
 </div>
 
 <div class="card">
 <div class="icon">🔧</div>
 <h3>Mobile Repair</h3>
-<p>Professional Repair Service</p>
+<p>Software & Hardware Repairing</p>
 </div>
 
 <div class="card">
 <div class="icon">💳</div>
-<h3>Recharge & SIM</h3>
+<h3>Recharge</h3>
 <p>Mobile Recharge & SIM Services</p>
 </div>
 
+<div class="card">
+<div class="icon">🪪</div>
+<h3>SIM Services</h3>
+<p>New SIM & Activation Services</p>
 </div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Fast Service</h3>
+<p>Reliable Service at Your Local Shop</p>
+</div>
+
 </div>
 </section>
 
 
-<!-- MOBILE BRANDS -->
+<!-- MOBILES -->
 <section id="mobiles">
 
-<div class="container">
+<h2 class="title">Popular Mobiles</h2>
 
-<div class="section-title">
-<h2>📱 Mobile Brands</h2>
-<p>अपना पसंदीदा mobile brand चुनें</p>
-</div>
-
-<div class="products">
-
-
-<!-- VIVO -->
-<div class="product">
-
-<div class="product-top">
-📱
-</div>
-
-<div class="product-info">
-
-<h3>Vivo Mobiles</h3>
-
-<p>
-Vivo के Latest Smartphones
+<p class="subtitle">
+Mobile की कीमत और availability के लिए WhatsApp करें
 </p>
-
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20Vivo%20mobile%20ke%20models%20aur%20price%20chahiye."
-target="_blank">
-💬 Vivo की जानकारी
-</a>
-
-</div>
-</div>
-
-
-<!-- OPPO -->
-<div class="product">
-
-<div class="product-top">
-📱
-</div>
-
-<div class="product-info">
-
-<h3>OPPO Mobiles</h3>
-
-<p>
-OPPO के Latest Smartphones
-</p>
-
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20OPPO%20mobile%20ke%20models%20aur%20price%20chahiye."
-target="_blank">
-💬 OPPO की जानकारी
-</a>
-
-</div>
-</div>
-
-
-<!-- SAMSUNG -->
-<div class="product">
-
-<div class="product-top">
-📱
-</div>
-
-<div class="product-info">
-
-<h3>Samsung Mobiles</h3>
-
-<p>
-Samsung के Latest Smartphones
-</p>
-
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20Samsung%20mobile%20ke%20models%20aur%20price%20chahiye."
-target="_blank">
-💬 Samsung की जानकारी
-</a>
-
-</div>
-</div>
-
-
-<!-- REALME -->
-<div class="product">
-
-<div class="product-top">
-📱
-</div>
-
-<div class="product-info">
-
-<h3>Realme Mobiles</h3>
-
-<p>
-Realme के Latest Smartphones
-</p>
-
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20Realme%20mobile%20ke%20models%20aur%20price%20chahiye."
-target="_blank">
-💬 Realme की जानकारी
-</a>
-
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- ACCESSORIES -->
-<section>
-
-<div class="container">
-
-<div class="section-title">
-<h2>🎧 Accessories</h2>
-<p>Mobile accessories की पूरी range</p>
-</div>
 
 <div class="products">
 
 <div class="product">
-<div class="product-top">🔌</div>
-<div class="product-info">
-<h3>Chargers</h3>
-<p>Fast Chargers</p>
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20Charger%20chahiye."
+
+<div class="pic">📱</div>
+
+<h3>Vivo Smartphones</h3>
+
+<p>Latest Vivo models available</p>
+
+<div class="price">Price: पूछें</div>
+
+<a class="order"
+href="https://wa.me/919755557593?text=Vivo%20mobile%20ke%20latest%20models%20aur%20price%20bataye."
 target="_blank">
-💬 पूछें
+WhatsApp पर पूछें
 </a>
+
 </div>
-</div>
+
 
 <div class="product">
-<div class="product-top">🔋</div>
-<div class="product-info">
-<h3>USB Cables</h3>
-<p>Type-C & Other Cables</p>
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20USB%20Cable%20chahiye."
+
+<div class="pic">📱</div>
+
+<h3>OPPO Smartphones</h3>
+
+<p>Latest OPPO models available</p>
+
+<div class="price">Price: पूछें</div>
+
+<a class="order"
+href="https://wa.me/919755557593?text=OPPO%20mobile%20ke%20latest%20models%20aur%20price%20bataye."
 target="_blank">
-💬 पूछें
+WhatsApp पर पूछें
 </a>
+
 </div>
-</div>
+
 
 <div class="product">
-<div class="product-top">🎧</div>
-<div class="product-info">
-<h3>Earphones</h3>
-<p>Wired & Wireless</p>
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20Earphone%20chahiye."
-target="_blank">
-💬 पूछें
-</a>
-</div>
-</div>
 
-<div class="product">
-<div class="product-top">📱</div>
-<div class="product-info">
-<h3>Mobile Covers</h3>
-<p>Stylish Covers & Cases</p>
-<a class="whatsapp-btn"
-href="https://wa.me/919755557593?text=Hello%20Ravi%20Telecom%2C%20mujhe%20Mobile%20Cover%20chahiye."
+<div class="pic">📱</div>
+
+<h3>Samsung Smartphones</h3>
+
+<p>Latest Samsung models available</p>
+
+<div class="price">Price: पूछें</div>
+
+<a class="order"
+href="https://wa.me/919755557593?text=Samsung%20mobile%20ke%20latest%20models%20aur%20price%20bataye."
 target="_blank">
-💬 पूछें
+WhatsApp पर पूछें
 </a>
-</div>
-</div>
 
 </div>
+
 </div>
 </section>
 
 
 <!-- SERVICES -->
-<section class="services-section" id="services">
+<section class="services" id="services">
 
-<div class="container">
+<h2 class="title">Our Services</h2>
 
-<div class="section-title">
-<h2>🔧 Our Services</h2>
-<p>Ravi Telecom की प्रमुख सेवाएं</p>
-</div>
+<p class="subtitle">
+Mobile से जुड़ी कई सुविधाएं एक ही जगह
+</p>
 
-<div class="services">
+<div class="grid">
 
-<div class="service">
+<div class="card">
 <div class="icon">🔧</div>
 <h3>Mobile Repairing</h3>
-<p>Mobile और Smartphone की repairing service.</p>
+<p>Software और hardware repairing</p>
 </div>
 
-<div class="service">
-<div class="icon">💳</div>
-<h3>Recharge</h3>
-<p>Mobile recharge की सुविधा.</p>
-</div>
-
-<div class="service">
-<div class="icon">📶</div>
-<h3>SIM Services</h3>
-<p>SIM activation और related services.</p>
-</div>
-
-<div class="service">
-<div class="icon">📱</div>
-<h3>Mobile Sales</h3>
-<p>अलग-अलग brands के smartphones.</p>
-</div>
-
-<div class="service">
-<div class="icon">🎧</div>
+<div class="card">
+<div class="icon">🔋</div>
 <h3>Accessories</h3>
-<p>Mobile covers, chargers, cables और earphones.</p>
-</div>
-
-<div class="service">
-<div class="icon">⚡</div>
-<h3>Fast Service</h3>
-<p>बेहतर और भरोसेमंद customer service.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- WHY US -->
-<section>
-
-<div class="container">
-
-<div class="section-title">
-<h2>⭐ Why Choose Ravi Telecom?</h2>
-<p>आपका भरोसा हमारी पहचान है</p>
-</div>
-
-<div class="why-grid">
-
-<div class="card">
-<div class="icon">⭐</div>
-<h3>Trusted</h3>
-<p>भरोसेमंद service</p>
+<p>Original & quality accessories</p>
 </div>
 
 <div class="card">
-<div class="icon">💰</div>
-<h3>Best Price</h3>
-<p>उचित कीमत</p>
+<div class="icon">📶</div>
+<h3>SIM & Recharge</h3>
+<p>SIM activation और recharge service</p>
 </div>
 
-<div class="card">
-<div class="icon">🔧</div>
-<h3>Expert Repair</h3>
-<p>Professional repairing</p>
-</div>
-
-<div class="card">
-<div class="icon">🤝</div>
-<h3>Customer Support</h3>
-<p>Customer satisfaction</p>
-</div>
-
-</div>
 </div>
 </section>
 
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section id="contact">
 
-<div class="container">
+<div class="contact">
 
-<div class="section-title">
-<h2>📞 Contact Ravi Telecom</h2>
-<p>किसी भी जानकारी के लिए संपर्क करें</p>
-</div>
+<h2>Ravi Telecom</h2>
 
-<div class="contact-box">
+<p>
+Mobile Shop • Repairing • Accessories • Recharge • SIM Services
+</p>
 
-<div class="contact-item">
-📱 <strong>Mobile:</strong>
-<a href="tel:+919755557593">
-+91 97555 57593
-</a>
-</div>
-
-<div class="contact-item">
-💬 <strong>WhatsApp:</strong>
-<a href="https://wa.me/919755557593" target="_blank">
-Chat on WhatsApp
-</a>
-</div>
-
-<div class="contact-item">
-🏪 <strong>Shop:</strong>
-Ravi Telecom
-</div>
-
-<div class="contact-item">
-📍 <strong>Location:</strong>
-Umari, Bhind, Madhya Pradesh
-</div>
-
-<br>
+<p>
+📍 Umari, Bhind, Madhya Pradesh
+</p>
 
 <div class="buttons">
 
-<a class="btn btn-green"
+<!-- WHATSAPP -->
+<a class="btn btn-wa"
 href="https://wa.me/919755557593"
 target="_blank">
-💬 WhatsApp करें
+💬 WhatsApp
 </a>
 
-<a class="btn btn-white"
-href="tel:+919755557593">
-📞 अभी Call करें
+<!-- CALL -->
+<a class="btn btn-call"
+href="tel:+919926213579">
+📞 9926213579
 </a>
 
 </div>
 
-</div>
 </div>
 </section>
 
+</main>
 
-<!-- FOOTER -->
+
 <footer>
 
-<h3>📱 Ravi Telecom</h3>
+<p>© 2026 Ravi Telecom. All Rights Reserved.</p>
 
-<p>
-Mobile Shop • Repair • Accessories • Recharge • SIM Services
-</p>
-
-<p>
-© 2026 Ravi Telecom. All Rights Reserved.
-</p>
+<p>Mobile Shop & Repairing Services</p>
 
 </footer>
 
 
 <!-- FLOATING WHATSAPP -->
-<a class="floating-whatsapp"
+<a class="float-wa"
 href="https://wa.me/919755557593"
-target="_blank">
+target="_blank"
+aria-label="WhatsApp">
 💬
 </a>
 
