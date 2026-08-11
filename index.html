@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
@@ -51,9 +50,10 @@ color:#ffe600
 
 nav{
 display:flex;
-gap:18px;
+gap:16px;
 font-weight:bold;
-font-size:14px
+font-size:14px;
+flex-wrap:wrap
 }
 
 nav a:hover{color:#ffe600}
@@ -62,7 +62,7 @@ nav a:hover{color:#ffe600}
 background:linear-gradient(135deg,#064a9e,#2e9bea);
 color:white;
 text-align:center;
-padding:70px 18px
+padding:75px 18px
 }
 
 .hero h1{
@@ -74,7 +74,7 @@ margin-bottom:12px
 
 .hero p{
 font-size:20px;
-max-width:800px;
+max-width:850px;
 margin:0 auto 28px
 }
 
@@ -118,33 +118,40 @@ margin-bottom:30px;
 font-size:18px
 }
 
-.grid{
+.grid,
+.shop-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px
 }
 
-.card{
+.card,
+.product{
 background:white;
 border-radius:20px;
-padding:25px 18px;
-text-align:center;
+padding:22px;
 box-shadow:0 5px 22px #102a430d;
 border:1px solid #e7ebf2
 }
+
+.card{text-align:center}
 
 .icon{
 font-size:48px;
 margin-bottom:10px
 }
 
-.card h3{
+.card h3,
+.product h3{
 color:#0759b8;
 font-size:21px;
 margin-bottom:6px
 }
 
-.card p{color:#667085}
+.card p,
+.product p{
+color:#667085
+}
 
 .shop-section{
 background:#eef5ff;
@@ -153,18 +160,7 @@ max-width:none
 
 .shop-grid{
 max-width:1150px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
-
-.product{
-background:white;
-border-radius:20px;
-padding:18px;
-box-shadow:0 5px 22px #102a430d;
-border:1px solid #e7ebf2
+margin:auto
 }
 
 .product-img{
@@ -177,16 +173,7 @@ justify-content:center;
 font-size:70px
 }
 
-.product h3{
-margin-top:14px;
-color:#0759b8;
-font-size:21px
-}
-
-.product p{
-color:#667085;
-min-height:48px
-}
+.product h3{margin-top:14px}
 
 .price{
 font-size:19px;
@@ -201,7 +188,8 @@ background:#20d568;
 color:white;
 padding:11px;
 border-radius:12px;
-font-weight:800
+font-weight:800;
+margin-top:10px
 }
 
 .category-label{
@@ -211,7 +199,7 @@ color:white;
 padding:5px 10px;
 border-radius:20px;
 font-size:12px;
-margin-top:10px
+margin-top:8px
 }
 
 /* AI */
@@ -246,7 +234,7 @@ margin-bottom:20px
 
 .ai-input{
 width:100%;
-min-height:110px;
+min-height:120px;
 padding:15px;
 border:2px solid #dce4ef;
 border-radius:15px;
@@ -255,7 +243,9 @@ resize:vertical;
 outline:none
 }
 
-.ai-input:focus{border-color:#0759b8}
+.ai-input:focus{
+border-color:#0759b8
+}
 
 .ai-btn{
 width:100%;
@@ -291,7 +281,7 @@ border-radius:12px;
 font-weight:800
 }
 
-/* PHOTO DIAGNOSIS */
+/* PCB */
 .photo-box{
 max-width:850px;
 margin:25px auto 0;
@@ -322,9 +312,7 @@ color:#667085;
 margin:10px 0 15px
 }
 
-.services{
-background:white
-}
+.services{background:white}
 
 .contact{
 background:linear-gradient(135deg,#0759b8,#1976d2);
@@ -351,39 +339,32 @@ text-align:center;
 padding:25px 15px
 }
 
-.float-ai{
+.float-ai,
+.float-wa{
 position:fixed;
 right:18px;
-bottom:92px;
 width:62px;
 height:62px;
 border-radius:50%;
-background:#0759b8;
 color:white;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:29px;
 box-shadow:0 5px 20px #0004;
-z-index:999;
+z-index:999
+}
+
+.float-ai{
+bottom:92px;
+background:#0759b8;
 border:3px solid white
 }
 
 .float-wa{
-position:fixed;
-right:18px;
 bottom:18px;
-width:62px;
-height:62px;
-border-radius:50%;
 background:#20d568;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-box-shadow:0 5px 20px #0004;
-z-index:999
+font-size:30px
 }
 
 @media(max-width:800px){
@@ -395,19 +376,28 @@ nav{display:none}
 grid-template-columns:1fr
 }
 
-.hero{padding:55px 16px}
+.hero{
+padding:55px 16px
+}
 
-.hero p{font-size:18px}
+.hero p{
+font-size:18px
+}
 
-section{padding:45px 15px}
+section{
+padding:45px 15px
+}
 
-.title{font-size:30px}
+.title{
+font-size:30px
+}
 
 .ai-box,
-.photo-box{padding:18px}
+.photo-box{
+padding:18px
+}
 }
 </style>
-
 </head>
 
 <body>
@@ -436,7 +426,9 @@ section{padding:45px 15px}
 
 <section class="hero" id="home">
 
-<h1>Welcome to <span class="yellow">Ravi Telecom</span></h1>
+<h1>
+Welcome to <span class="yellow">Ravi Telecom</span>
+</h1>
 
 <p>
 📱 New Mobiles • 🖥️ LCD • 🔧 Repairing Parts • 📱 Covers • 🎧 Accessories
@@ -444,16 +436,23 @@ section{padding:45px 15px}
 
 <div class="buttons">
 
-<a class="btn btn-shop" href="#mobiles">🛍️ Shop Now</a>
+<a class="btn btn-shop" href="#mobiles">
+🛍️ Shop Now
+</a>
 
 <a class="btn btn-wa"
 href="https://wa.me/919755557593?text=Namaste%20Ravi%20Telecom%2C%20mujhe%20mobile%20ya%20accessories%20ke%20baare%20mein%20jaankari%20chahiye"
-target="_blank">💬 WhatsApp</a>
+target="_blank">
+💬 WhatsApp
+</a>
 
-<a class="btn btn-call" href="tel:+919926213579">📞 Call Now</a>
+<a class="btn btn-call" href="tel:+919926213579">
+📞 Call Now
+</a>
 
 </div>
 </section>
+
 
 <!-- CATEGORIES -->
 
@@ -461,7 +460,9 @@ target="_blank">💬 WhatsApp</a>
 
 <h2 class="title">🛍️ Shop Categories</h2>
 
-<p class="subtitle">Ravi Telecom पर मोबाइल से जुड़ी चीजें एक ही जगह</p>
+<p class="subtitle">
+Ravi Telecom पर मोबाइल से जुड़ी चीजें एक ही जगह
+</p>
 
 <div class="grid">
 
@@ -504,13 +505,16 @@ target="_blank">💬 WhatsApp</a>
 </div>
 </section>
 
+
 <!-- NEW MOBILES -->
 
 <section class="shop-section" id="mobiles">
 
 <h2 class="title">📱 New Mobiles</h2>
 
-<p class="subtitle">Latest mobile models और price के लिए WhatsApp करें</p>
+<p class="subtitle">
+Latest mobile models और price के लिए WhatsApp करें
+</p>
 
 <div class="shop-grid">
 
@@ -520,11 +524,14 @@ target="_blank">💬 WhatsApp</a>
 <p>Latest Vivo models available</p>
 <div class="price">Price: पूछें</div>
 <span class="category-label">New Mobile</span>
-<br>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Vivo%20ke%20latest%20mobile%20models%20aur%20price%20bataye"
-target="_blank">💬 WhatsApp पर पूछें</a>
+target="_blank">
+💬 WhatsApp पर पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">📱</div>
@@ -532,11 +539,14 @@ target="_blank">💬 WhatsApp पर पूछें</a>
 <p>Latest OPPO models available</p>
 <div class="price">Price: पूछें</div>
 <span class="category-label">New Mobile</span>
-<br>
+
 <a class="order"
 href="https://wa.me/919755557593?text=OPPO%20ke%20latest%20mobile%20models%20aur%20price%20bataye"
-target="_blank">💬 WhatsApp पर पूछें</a>
+target="_blank">
+💬 WhatsApp पर पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">📱</div>
@@ -544,14 +554,17 @@ target="_blank">💬 WhatsApp पर पूछें</a>
 <p>Latest Samsung models available</p>
 <div class="price">Price: पूछें</div>
 <span class="category-label">New Mobile</span>
-<br>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Samsung%20ke%20latest%20mobile%20models%20aur%20price%20bataye"
-target="_blank">💬 WhatsApp पर पूछें</a>
+target="_blank">
+💬 WhatsApp पर पूछें
+</a>
 </div>
 
 </div>
 </section>
+
 
 <!-- LCD -->
 
@@ -559,7 +572,9 @@ target="_blank">💬 WhatsApp पर पूछें</a>
 
 <h2 class="title">🖥️ Mobile LCD / Display</h2>
 
-<p class="subtitle">अपने mobile model की LCD के लिए enquiry करें</p>
+<p class="subtitle">
+अपने mobile model की LCD के लिए enquiry करें
+</p>
 
 <div class="shop-grid">
 
@@ -568,41 +583,55 @@ target="_blank">💬 WhatsApp पर पूछें</a>
 <h3>Vivo LCD / Display</h3>
 <p>Vivo mobile display replacement</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Vivo%20LCD%20display%20chahiye"
-target="_blank">💬 LCD Price पूछें</a>
+target="_blank">
+💬 LCD Price पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">🖥️</div>
 <h3>OPPO LCD / Display</h3>
 <p>OPPO mobile display replacement</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=OPPO%20LCD%20display%20chahiye"
-target="_blank">💬 LCD Price पूछें</a>
+target="_blank">
+💬 LCD Price पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">🖥️</div>
 <h3>Samsung LCD / Display</h3>
 <p>Samsung mobile display replacement</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Samsung%20LCD%20display%20chahiye"
-target="_blank">💬 LCD Price पूछें</a>
+target="_blank">
+💬 LCD Price पूछें
+</a>
 </div>
 
 </div>
 </section>
 
-<!-- REPAIRING PARTS -->
+
+<!-- PARTS -->
 
 <section class="shop-section" id="parts">
 
 <h2 class="title">🔧 Mobile Repairing Parts</h2>
 
-<p class="subtitle">Repairing parts और components के लिए enquiry करें</p>
+<p class="subtitle">
+Repairing parts और components के लिए enquiry करें
+</p>
 
 <div class="shop-grid">
 
@@ -611,33 +640,45 @@ target="_blank">💬 LCD Price पूछें</a>
 <h3>Battery</h3>
 <p>Different mobile models की replacement battery</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Mobile%20battery%20chahiye"
-target="_blank">💬 Price पूछें</a>
+target="_blank">
+💬 Price पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">🔌</div>
 <h3>Charging Board / Flex</h3>
 <p>Charging port और flex replacement parts</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Mobile%20charging%20board%20ya%20flex%20chahiye"
-target="_blank">💬 Price पूछें</a>
+target="_blank">
+💬 Price पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">🔊</div>
 <h3>Speaker / Mic</h3>
 <p>Speaker, microphone और related parts</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Mobile%20speaker%20ya%20mic%20part%20chahiye"
-target="_blank">💬 Price पूछें</a>
+target="_blank">
+💬 Price पूछें
+</a>
 </div>
 
 </div>
 </section>
+
 
 <!-- COVERS -->
 
@@ -645,7 +686,9 @@ target="_blank">💬 Price पूछें</a>
 
 <h2 class="title">📱 Mobile Covers</h2>
 
-<p class="subtitle">अपने mobile model का cover WhatsApp पर पूछें</p>
+<p class="subtitle">
+अपने mobile model का cover WhatsApp पर पूछें
+</p>
 
 <div class="shop-grid">
 
@@ -654,33 +697,45 @@ target="_blank">💬 Price पूछें</a>
 <h3>Vivo Covers</h3>
 <p>Vivo models के नए covers</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Vivo%20mobile%20cover%20chahiye"
-target="_blank">💬 Cover पूछें</a>
+target="_blank">
+💬 Cover पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">📱</div>
 <h3>OPPO Covers</h3>
 <p>OPPO models के नए covers</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=OPPO%20mobile%20cover%20chahiye"
-target="_blank">💬 Cover पूछें</a>
+target="_blank">
+💬 Cover पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">📱</div>
 <h3>Samsung Covers</h3>
 <p>Samsung models के नए covers</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Samsung%20mobile%20cover%20chahiye"
-target="_blank">💬 Cover पूछें</a>
+target="_blank">
+💬 Cover पूछें
+</a>
 </div>
 
 </div>
 </section>
+
 
 <!-- ACCESSORIES -->
 
@@ -688,7 +743,9 @@ target="_blank">💬 Cover पूछें</a>
 
 <h2 class="title">🎧 Accessories</h2>
 
-<p class="subtitle">Mobile accessories के लिए WhatsApp करें</p>
+<p class="subtitle">
+Mobile accessories के लिए WhatsApp करें
+</p>
 
 <div class="shop-grid">
 
@@ -697,33 +754,45 @@ target="_blank">💬 Cover पूछें</a>
 <h3>Charger & Cable</h3>
 <p>Mobile chargers और charging cables</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Mobile%20charger%20aur%20cable%20chahiye"
-target="_blank">💬 Price पूछें</a>
+target="_blank">
+💬 Price पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">🎧</div>
 <h3>Earphones</h3>
 <p>Wired और wireless earphones</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Earphones%20chahiye"
-target="_blank">💬 Price पूछें</a>
+target="_blank">
+💬 Price पूछें
+</a>
 </div>
+
 
 <div class="product">
 <div class="product-img">🛡️</div>
 <h3>Tempered Glass</h3>
 <p>Different mobile models के screen protectors</p>
 <div class="price">Price: पूछें</div>
+
 <a class="order"
 href="https://wa.me/919755557593?text=Mobile%20tempered%20glass%20chahiye"
-target="_blank">💬 Price पूछें</a>
+target="_blank">
+💬 Price पूछें
+</a>
 </div>
 
 </div>
 </section>
+
 
 <!-- AI REPAIR -->
 
@@ -731,7 +800,9 @@ target="_blank">💬 Price पूछें</a>
 
 <div class="ai-box">
 
-<h2 class="ai-title">🤖 AI Mobile Repair Assistant</h2>
+<h2 class="ai-title">
+🤖 AI Mobile Repair Assistant
+</h2>
 
 <p class="ai-subtitle">
 मोबाइल की समस्या लिखें और शुरुआती troubleshooting जानकारी पाएँ।
@@ -740,7 +811,9 @@ target="_blank">💬 Price पूछें</a>
 <textarea
 id="aiInput"
 class="ai-input"
-placeholder="उदाहरण: Vivo Y12 चालू नहीं हो रहा है&#10;Samsung में charging नहीं हो रही है"></textarea>
+placeholder="उदाहरण: Vivo Y12 चालू नहीं हो रहा है
+Samsung में charging नहीं हो रही है
+Phone में network नहीं आ रहा"></textarea>
 
 <button class="ai-btn" onclick="askAI()">
 🤖 AI से समस्या पूछें
@@ -748,21 +821,24 @@ placeholder="उदाहरण: Vivo Y12 चालू नहीं हो र�
 
 <div id="aiAnswer" class="ai-answer"></div>
 
-<a id="aiWhatsApp" class="ai-wa" target="_blank">
+<a id="aiWhatsApp"
+class="ai-wa"
+target="_blank">
 💬 Ravi Telecom से WhatsApp पर संपर्क करें
 </a>
 
 </div>
 </section>
 
-<!-- PHOTO DIAGNOSIS DEMO -->
+
+<!-- PCB PHOTO -->
 
 <section>
 
 <h2 class="title">📸 PCB / Motherboard Photo Check</h2>
 
 <p class="subtitle">
-Motherboard की साफ फोटो चुनें और technician enquiry के लिए भेजें।
+Motherboard की साफ फोटो चुनें और technician enquiry करें।
 </p>
 
 <div class="photo-box">
@@ -774,21 +850,22 @@ class="photo-input"
 accept="image/*"
 onchange="previewPCB(event)">
 
-<img id="pcbPreview" class="preview">
+<img id="pcbPreview" class="preview" alt="PCB Preview">
 
 <p class="photo-info">
 ⚠️ यह photo preview/demo है। फोटो से final fault confirm नहीं किया जा सकता।
 </p>
 
 <a
-id="pcbWhatsApp"
 class="order"
-href="https://wa.me/919755557593?text=Namaste%20Ravi%20Telecom%2C%20main%20mobile%20motherboard%20ki%20photo%20ke%20saath%20repair%20enquiry%20karna%20chahta%20hoon."
+href="https://wa.me/919755557593?text=Namaste%20Ravi%20Telecom%2C%20main%20mobile%20motherboard%20ki%20photo%20ke%20saath%20repair%20enquiry%20karna%20chahta%20hoon"
 target="_blank">
-💬 PCB Repair Enquiry WhatsApp पर भेजें </a>
+💬 PCB Repair Enquiry WhatsApp पर भेजें
+</a>
 
 </div>
 </section>
+
 
 <!-- SERVICES -->
 
@@ -796,7 +873,9 @@ target="_blank">
 
 <h2 class="title">🔧 Our Services</h2>
 
-<p class="subtitle">Mobile से जुड़ी सुविधाएं एक ही जगह</p>
+<p class="subtitle">
+Mobile से जुड़ी सुविधाएं एक ही जगह
+</p>
 
 <div class="grid">
 
@@ -821,6 +900,7 @@ target="_blank">
 </div>
 </section>
 
+
 <!-- CONTACT -->
 
 <section id="contact">
@@ -829,18 +909,28 @@ target="_blank">
 
 <h2>📱 Ravi Telecom</h2>
 
-<p>Mobile Shop • LCD • Parts • Covers • Accessories • Repairing</p>
+<p>
+Mobile Shop • LCD • Parts • Covers • Accessories • Repairing
+</p>
 
-<p>📍 Umari, Bhind, Madhya Pradesh</p>
+<p>
+📍 Umari, Bhind, Madhya Pradesh
+</p>
 
 <div class="buttons">
 
-<a class="btn btn-wa"
+<a
+class="btn btn-wa"
 href="https://wa.me/919755557593"
-target="_blank">💬 WhatsApp</a>
+target="_blank">
+💬 WhatsApp
+</a>
 
-<a class="btn btn-call"
-href="tel:+919926213579">📞 9926213579</a>
+<a
+class="btn btn-call"
+href="tel:+919926213579">
+📞 9926213579
+</a>
 
 </div>
 
@@ -849,20 +939,35 @@ href="tel:+919926213579">📞 9926213579</a>
 
 </main>
 
+
 <footer>
 
 <p>© 2026 Ravi Telecom. All Rights Reserved.</p>
 
-<p>New Mobiles • LCD • Parts • Covers • Accessories • Repair</p>
+<p>
+New Mobiles • LCD • Parts • Covers • Accessories • Repair
+</p>
 
 </footer>
 
-<a class="float-ai" href="#ai" aria-label="AI Repair Assistant">🤖</a>
 
-<a class="float-wa"
+<!-- FLOATING BUTTONS -->
+
+<a
+class="float-ai"
+href="#ai"
+aria-label="AI Repair Assistant">
+🤖
+</a>
+
+<a
+class="float-wa"
 href="https://wa.me/919755557593"
 target="_blank"
-aria-label="WhatsApp">💬</a>
+aria-label="WhatsApp">
+💬
+</a>
+
 
 <script>
 
@@ -875,8 +980,12 @@ const whatsapp=document.getElementById("aiWhatsApp");
 const problem=input.value.trim().toLowerCase();
 
 if(!problem){
+
 answer.style.display="block";
-answer.innerText="⚠️ पहले मोबाइल की समस्या लिखें।";
+
+answer.innerText=
+"⚠️ पहले मोबाइल की समस्या लिखें।";
+
 return;
 }
 
@@ -884,10 +993,16 @@ let response=
 "🔍 शुरुआती जाँच:\n\n"+
 "• Charger और cable बदलकर देखें।\n"+
 "• Phone restart करके देखें।\n"+
-"• अगर समस्या बनी रहे तो technician से diagnosis करवाएँ।\n\n"+
+"• समस्या बनी रहे तो technician से diagnosis करवाएँ।\n\n"+
 "🔧 Ravi Telecom पर proper testing के बाद सही repair बताई जा सकती है।";
 
-if(problem.includes("dead")||problem.includes("चालू")||problem.includes("power")){
+
+if(
+problem.includes("dead") ||
+problem.includes("चालू") ||
+problem.includes("power") ||
+problem.includes("on नहीं")
+){
 
 response=
 "🔧 Phone Dead / Power Problem\n\n"+
@@ -898,7 +1013,12 @@ response=
 
 }
 
-else if(problem.includes("charging")||problem.includes("charge")||problem.includes("चार्ज")){
+
+else if(
+problem.includes("charging") ||
+problem.includes("charge") ||
+problem.includes("चार्ज")
+){
 
 response=
 "🔋 Charging Problem\n\n"+
@@ -909,7 +1029,13 @@ response=
 
 }
 
-else if(problem.includes("display")||problem.includes("screen")||problem.includes("lcd")){
+
+else if(
+problem.includes("display") ||
+problem.includes("screen") ||
+problem.includes("lcd") ||
+problem.includes("डिस्प्ले")
+){
 
 response=
 "🖥️ Display Problem\n\n"+
@@ -919,7 +1045,12 @@ response=
 
 }
 
-else if(problem.includes("network")||problem.includes("signal")||problem.includes("नेटवर्क")){
+
+else if(
+problem.includes("network") ||
+problem.includes("signal") ||
+problem.includes("नेटवर्क")
+){
 
 response=
 "📶 Network Problem\n\n"+
@@ -930,7 +1061,12 @@ response=
 
 }
 
-else if(problem.includes("water")||problem.includes("pani")||problem.includes("पानी")){
+
+else if(
+problem.includes("water") ||
+problem.includes("pani") ||
+problem.includes("पानी")
+){
 
 response=
 "💧 Water Damage\n\n"+
@@ -941,7 +1077,12 @@ response=
 
 }
 
-else if(problem.includes("hang")||problem.includes("slow")||problem.includes("हैंग")){
+
+else if(
+problem.includes("hang") ||
+problem.includes("slow") ||
+problem.includes("हैंग")
+){
 
 response=
 "⚡ Phone Hang / Slow\n\n"+
@@ -951,6 +1092,7 @@ response=
 "• Software update check करें।";
 
 }
+
 
 answer.style.display="block";
 answer.innerText=response;
@@ -970,20 +1112,27 @@ whatsapp.style.display="block";
 function previewPCB(event){
 
 const file=event.target.files[0];
-const preview=document.getElementById("pcbPreview");
+
+const preview=
+document.getElementById("pcbPreview");
 
 if(!file)return;
 
 if(!file.type.startsWith("image/")){
+
 alert("कृपया image file चुनें।");
+
 return;
 }
 
 const reader=new FileReader();
 
 reader.onload=function(e){
+
 preview.src=e.target.result;
+
 preview.style.display="block";
+
 };
 
 reader.readAsDataURL(file);
