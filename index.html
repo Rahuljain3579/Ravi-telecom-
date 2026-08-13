@@ -240,7 +240,7 @@ background:#101522;box-shadow:0 12px 30px rgba(0,0,0,.35);font-size:21px}
           <h2>Problem बताइए,<br>Diagnosis से शुरू करें.</h2>
           <p>अपनी mobile problem लिखकर initial troubleshooting guidance लें। PCB की साफ photo देखकर technician को issue समझाने में भी मदद मिलेगी.</p>
           <div class="chips"><span class="chip">Phone Dead</span><span class="chip">No Charging</span><span class="chip">Heating</span><span class="chip">Bootloop</span><span class="chip">0.00A Current</span></div>
-          <a class="btn primary" href="#contact">Ask Ravi Telecom →</a>
+          <button class="btn primary aiOpenBtn" onclick="openAI()">🤖 Open AI Repair Assistant →</button>
         </div>
         <div class="aiBox">
           <div class="aiLine"><div class="avatar">👤</div><div class="bubble">Phone dead hai, power supply par 0.00A aa raha hai.</div></div>
@@ -283,5 +283,128 @@ background:#101522;box-shadow:0 12px 30px rgba(0,0,0,.35);font-size:21px}
   <a class="floatBtn" href="#contact" title="Contact">💬</a>
   <a class="floatBtn" href="#repair" title="Repair Help">🔧</a>
 </div>
+
+<!-- SECURE AI REPAIR ASSISTANT -->
+<div class="aiModal" id="aiModal" aria-hidden="true">
+  <div class="aiModalCard">
+    <button class="aiClose" onclick="closeAI()" aria-label="Close">×</button>
+    <div class="eyebrow">RAVI TELECOM AI</div>
+    <h2 style="font-size:30px;margin:7px 0">AI Repair Assistant 🤖</h2>
+    <p style="color:var(--muted);font-size:13px">
+      Mobile problem लिखें और PCB/phone की साफ photo लगाएँ। Secure AI service initial diagnosis और troubleshooting steps देगी.
+    </p>
+
+    <label class="aiLabel">Mobile Model</label>
+    <input id="aiModel" class="aiInput" placeholder="जैसे Vivo Y12 / OPPO A78">
+
+    <label class="aiLabel">Problem</label>
+    <textarea id="aiQuestion" class="aiInput" rows="4"
+      placeholder="जैसे: Phone dead है, power supply पर 0.00A आता है..."></textarea>
+
+    <label class="aiLabel">Phone / PCB Photo (optional)</label>
+    <input id="aiImage" class="aiInput" type="file" accept="image/*">
+
+    <button class="btn primary aiAsk" onclick="askRepairAI()">🔍 Diagnose with AI</button>
+
+    <div id="aiStatus" class="aiStatus"></div>
+    <div id="aiAnswer" class="aiAnswer"></div>
+  </div>
+</div>
+
+<style>
+.aiOpenBtn{margin-top:14px}
+.aiModal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.78);
+backdrop-filter:blur(8px);padding:20px;align-items:center;justify-content:center}
+.aiModal.show{display:flex}
+.aiModalCard{position:relative;width:min(650px,100%);max-height:92vh;overflow:auto;padding:28px;
+border:1px solid rgba(124,92,255,.35);border-radius:24px;background:#0d121e;
+box-shadow:0 30px 100px rgba(0,0,0,.55)}
+.aiClose{position:absolute;right:16px;top:12px;background:none;border:0;color:#fff;
+font-size:30px;cursor:pointer}
+.aiLabel{display:block;font-size:12px;font-weight:800;margin:16px 0 7px;color:#dfe5f0}
+.aiInput{width:100%;border:1px solid var(--line);border-radius:13px;background:#080c14;
+color:#fff;padding:12px;font:inherit;outline:none;box-sizing:border-box}
+.aiInput:focus{border-color:rgba(124,92,255,.75)}
+.aiAsk{width:100%;margin-top:18px}
+.aiStatus{margin-top:14px;font-size:12px;color:#9da7ba}
+.aiAnswer{margin-top:12px;padding:16px;border:1px solid var(--line);border-radius:16px;
+background:#080c14;white-space:pre-wrap;font-size:13px;line-height:1.65;display:none}
+.aiAnswer.show{display:block}
+.aiSecurityNote{font-size:10px;color:#9da7ba;margin-top:8px}
+</style>
+
+<script>
+const RAVI_AI_ENDPOINT = "/api/repair";
+
+function openAI(){
+  document.getElementById("aiModal").classList.add("show");
+  document.getElementById("aiModal").setAttribute("aria-hidden","false");
+}
+function closeAI(){
+  document.getElementById("aiModal").classList.remove("show");
+  document.getElementById("aiModal").setAttribute("aria-hidden","true");
+}
+
+async function askRepairAI(){
+  const model = document.getElementById("aiModel").value.trim();
+  const question = document.getElementById("aiQuestion").value.trim();
+  const file = document.getElementById("aiImage").files[0];
+  const status = document.getElementById("aiStatus");
+  const answer = document.getElementById("aiAnswer");
+
+  if(!model && !question && !file){
+    status.textContent = "❌ Mobile model, problem या photo में से कुछ दें.";
+    return;
+  }
+
+  status.textContent = "⏳ AI diagnosis तैयार कर रहा है...";
+  answer.classList.remove("show");
+  answer.textContent = "";
+
+  try{
+    const body = {
+      model: model,
+      question: question,
+      image: file ? await fileToDataURL(file) : null
+    };
+
+    const res = await fetch(RAVI_AI_ENDPOINT, {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(body)
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if(!res.ok){
+      throw new Error(data.message || "AI service अभी connected नहीं है.");
+    }
+
+    const text = data.answer || data.text || "AI ने कोई जवाब नहीं दिया.";
+    status.textContent = "✅ Diagnosis ready";
+    answer.textContent = text;
+    answer.classList.add("show");
+  }catch(err){
+    status.textContent = "ℹ️ " + err.message;
+    answer.textContent =
+      "AI backend अभी setup नहीं हुआ है। Website का AI interface तैयार है; अगला step secure backend जोड़ना है ताकि Gemini API key public न हो.";
+    answer.classList.add("show");
+  }
+}
+
+function fileToDataURL(file){
+  return new Promise((resolve,reject)=>{
+    if(file.size > 8*1024*1024){
+      reject(new Error("Photo 8 MB से छोटी रखें."));
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+</script>
+
 </body>
 </html>
